@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/main.css">
+    <title>WheatherApp</title>
+</head>
+<body id="bg" class="">
+    <header class="header container">
+        <div class="header__content">
+            <div class="header__city">
+                <div class="header__city__selected">
+                    <h1 class="city" id="city"></h1>
+                    <div class="header__city__position">
+                        <span id="change__city__btn">Change city</span>
+                        <span id="my_location_btn"><img src="./src/img/location.svg" />My location</span>
+                    </div>
+                </div>
+                <div class="header__city__noselected">
+                    <input class="header__search" type="text" placeholder="Searching...">
+                    <span><img id="search__btn" src="./src/img/search.svg"></span>
+                    <div class="header__search__error"></div>
+                </div>
+            </div>
+            <div class="header__time">
+                <div class="header__time__date"><p id="date__day"></p><span id="date__month">Jul</span></div>
+                <div class="header__time__clock"><span id="clock__hours"></span>:<span id="clock__minutes"></span></div>
+                <div class="header__time__description">
+                    <span id="time_description">Night</span>
+                    <img id="time_icon" src="">
+                </div>
+            </div>
+            <div class="header__unit">
+                <div class="header__unit__сelsius active" id="celsius">
+                    <p>C</p>
+                </div>
+                <div class="header__unit__fahrenheit" id="fahrenheit">
+                    <p>F</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wheather__main__content container">
+        <div class="wheather__main__content__temperature">
+            <div class="wheather__main__content__temperature__content">
+                <img id="wheather__icon" src="">
+                <h1 id="wheather__temp"></h1>
+                <span id="wheather__unit">o</span>
+                <p id="wheather__description"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="weather__hour__content container">
+        <div class="weather__hour__content__card day-theme-additional">
+            <div class="weather__hour__content__card__date">
+                <p class="hour__date__day">25</p><span class="hour__date__month">Jul</span>
+            </div>
+            <div class="weather__hour__content__card__time">
+                <span>Now</span><span class="hour__weather__hours"></span><span class="hour__weather__minutes"></span>
+            </div>
+            <div class="weather__hour__content__card__temp">
+                <span class="weather__hour__temp"></span>
+            </div>
+            <div class="weather__hour__content__card__icon">
+                <img src="" class="hourly__weather__icon" alt="">
+            </div>
+        </div>
+
+        <div class="weather__hour__content__card day-theme-additional">
+            <div class="weather__hour__content__card__date">
+                <p class="hour__date__day"></p><span class="hour__date__month"></span>
+            </div>
+            <div class="weather__hour__content__card__time">
+                <span class="hour__weather__hours"></span>:<span class="hour__weather__minutes"></span>
+            </div>
+            <div class="weather__hour__content__card__temp">
+                <span class="weather__hour__temp"></span>
+            </div>
+            <div class="weather__hour__content__card__icon">
+                <img src="" class="hourly__weather__icon" alt="">
+            </div>
+            <div class="weather__hour__content__card__parameters">
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Wind</p>:<span class="card__wind"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Gusts of wind</p>:<span class="card__gust"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Humidity</p>:<span class="card__humidity"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Pressure</p>:<span class="card__pressure"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Cloud cover</p>:<span class="card__clouds"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="weather__hour__content__card day-theme-additional">
+            <div class="weather__hour__content__card__date">
+                <p class="hour__date__day"></p><span class="hour__date__month"></span>
+            </div>
+            <div class="weather__hour__content__card__time">
+                <span class="hour__weather__hours"></span>:<span class="hour__weather__minutes"></span>
+            </div>
+            <div class="weather__hour__content__card__temp">
+                <span class="weather__hour__temp"></span>
+            </div>
+            <div class="weather__hour__content__card__icon">
+                <img src="" class="hourly__weather__icon" alt="">
+            </div>
+            <div class="weather__hour__content__card__parameters">
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Wind</p>:<span class="card__wind"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Gusts of wind</p>:<span class="card__gust"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Humidity</p>:<span class="card__humidity"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Pressure</p>:<span class="card__pressure"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Cloud cover</p>:<span class="card__clouds"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="weather__hour__content__card day-theme-additional">
+            <div class="weather__hour__content__card__date">
+                <p class="hour__date__day"></p><span class="hour__date__month"></span>
+            </div>
+            <div class="weather__hour__content__card__time">
+                <span class="hour__weather__hours"></span>:<span class="hour__weather__minutes"></span>
+            </div>
+            <div class="weather__hour__content__card__temp">
+                <span class="weather__hour__temp"></span>
+            </div>
+            <div class="weather__hour__content__card__icon">
+                <img src="" class="hourly__weather__icon" alt="">
+            </div>
+            <div class="weather__hour__content__card__parameters">
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Wind</p>:<span class="card__wind"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Gusts of wind</p>:<span class="card__gust"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Humidity</p>:<span class="card__humidity"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Pressure</p>:<span class="card__pressure"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Cloud cover</p>:<span class="card__clouds"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="weather__hour__content__card day-theme-additional">
+            <div class="weather__hour__content__card__date">
+                <p class="hour__date__day"></p><span class="hour__date__month"></span>
+            </div>
+            <div class="weather__hour__content__card__time">
+                <span class="hour__weather__hours"></span>:<span class="hour__weather__minutes"></span>
+            </div>
+            <div class="weather__hour__content__card__temp">
+                <span class="weather__hour__temp"></span>
+            </div>
+            <div class="weather__hour__content__card__icon">
+                <img src="" class="hourly__weather__icon" alt="">
+            </div>
+            <div class="weather__hour__content__card__parameters">
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Wind</p>:<span class="card__wind"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Gusts of wind</p>:<span class="card__gust"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Humidity</p>:<span class="card__humidity"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Pressure</p>:<span class="card__pressure"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Cloud cover</p>:<span class="card__clouds"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="weather__hour__content__card day-theme-additional">
+            <div class="weather__hour__content__card__date">
+                <p class="hour__date__day"></p><span class="hour__date__month"></span>
+            </div>
+            <div class="weather__hour__content__card__time">
+                <span class="hour__weather__hours"></span>:<span class="hour__weather__minutes"></span>
+            </div>
+            <div class="weather__hour__content__card__temp">
+                <span class="weather__hour__temp"></span>
+            </div>
+            <div class="weather__hour__content__card__icon">
+                <img src="" class="hourly__weather__icon" alt="">
+            </div>
+            <div class="weather__hour__content__card__parameters">
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Wind</p>:<span class="card__wind"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Gusts of wind</p>:<span class="card__gust"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Humidity</p>:<span class="card__humidity"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Pressure</p>:<span class="card__pressure"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Cloud cover</p>:<span class="card__clouds"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="weather__hour__content__card day-theme-additional">
+            <div class="weather__hour__content__card__date">
+                <p class="hour__date__day"></p><span class="hour__date__month"></span>
+            </div>
+            <div class="weather__hour__content__card__time">
+                <span class="hour__weather__hours"></span>:<span class="hour__weather__minutes"></span>
+            </div>
+            <div class="weather__hour__content__card__temp">
+                <span class="weather__hour__temp"></span>
+            </div>
+            <div class="weather__hour__content__card__icon">
+                <img src="" class="hourly__weather__icon" alt="">
+            </div>
+            <div class="weather__hour__content__card__parameters">
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Wind</p>:<span class="card__wind"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Gusts of wind</p>:<span class="card__gust"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Humidity</p>:<span class="card__humidity"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Pressure</p>:<span class="card__pressure"></span>
+                </div>
+                <div class="weather__hour__content__card__parameters__item">
+                    <p>Cloud cover</p>:<span class="card__clouds"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="weather_parameters" class="wheather__params day-theme-additional">
+        <div class="wheather__params__param">
+            <p>Wind</p>
+            <span id="wind__param"></span>
+        </div>
+        <div class="wheather__params__param">
+            <p>Gusts of wind</p>
+            <span id="gusts__param"></span>
+        </div>
+        <div class="wheather__params__param">
+            <p>Humidity</p>
+            <span id="humidity__param"></span>
+        </div>
+        <div class="wheather__params__param">
+            <p>Pressure</p>
+            <span id="pressure__param"></span>
+        </div>
+        <div class="wheather__params__param">
+            <p>Cloud Cover</p>
+            <span id="cloudcover__param"></span>
+        </div>
+    </div>
+    
+    <div id="sky__effect" class=""></div>
+    <div id="rain" class=""></div>
+    
+    <script type="module" src="src/js/timeReset.js"></script>
+    <script type="module" src="src/js/index.js"></script>
+    <script type="module" src="src/js/changeLocation.js"></script>
+    <script type="module" src="src/js/changeUnits.js"></script>
+</body>
+</html>
